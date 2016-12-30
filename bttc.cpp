@@ -344,12 +344,7 @@ void bttc_b::valid_moves(list<coord> &lvm,const coord &c) const
   void bttc_b::area_analysis(const coord& c,board_v& b,int &area_size,vector<int > &vlc, int num_play) const
 {
 
-  /*1  procedure DFS(G,v):
-2      label v as discovered
-3      for all edges w in G.adjacentEdges(v) do
-4          if vertex w is not labeled as discovered then
-5              recursively call DFS(G,w)
-  */
+
   b(c) = 11;//means visited
   list<coord>  lvm;
   valid_moves(lvm,c);
@@ -464,40 +459,10 @@ int main()
         // Write an action using cout. DON'T FORGET THE "<< endl"
         // To debug: cerr << "Debug messages..." << endl;
 
-       //curr_board.print_board();
-
-
 	
        coord res = curr_board.find_next_move() ; 
        res.print_result();
 
-       /*     
-       // curr_board.board.print_board();
-       cerr << "--------------" << endl;
 
-       // vector<pair<int, vector<list<coord>>>> vpvlc;
-       vector<pair<int, vector<int>>> vpvlc;
-	 
-       curr_board.detect_area(curr_board.board, vpvlc,opponentCount+1);
-       //  curr_board.board.print_board();
-
-       for(auto &i:vpvlc)
-	 {
-	   cerr << "num elt " << i.first <<endl;
-	   for(auto &j:i.second)
-	     {
-	       cerr << "*********************" << endl;
-	       //for(auto &k:j)
-		 {
-		   cerr << j << " " << endl;
-		 }
-	       cerr << endl << "*********************" << endl;
-	     }
-	 }
-       cerr << "--------------" << endl;
-       
-       
-       cerr << "FIN" << endl;*/
-       // cout << "17 10" << endl; // action: "x y" to move or "BACK rounds" to go back in time
     }
 }
